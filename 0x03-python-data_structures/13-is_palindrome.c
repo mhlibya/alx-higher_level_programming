@@ -1,49 +1,51 @@
-#include"lists.h"
-/**
- * length - elrijf
- * @head: worufh
- * Return: lofjiv
- */
-int length(listint_t **head)
-{
-int len = 0;
-listint_t *current = *head;
-while (current != NULL)
-{
-len++;
-current = current->next;
-}
-return (len);
-}
-/**
- * is_palindrome - ugku
- * @head: kujgh
- * Return: ljkh
+#include "lists.h"
+#include <stdlib.h>
+#include <stdio.h>
+/*
+ * is_palindrome - function with one argument
+ * @head: pointer to linked list
+ *
+ * Description: check if value singly linked list is palindrome
+ * Return: 1 if true or 0 if false
  */
 int is_palindrome(listint_t **head)
 {
-int n = length(head);
+	listint_t *ptr;
+	int count = 0, count2 = 0, half;
+	int *buf = NULL;
 
-if (n == 0)
+	if (!head)
+	      return (0);
+	if (!*head)
+		return (1);
+	ptr = *head;
+	while (ptr && ptr->next)
+	{
+		ptr = ptr->next;
+		count++;
+	}
+	buf = malloc(sizeof(int) * count);
+	if (!buf)
+		return (0);
+
+	ptr = *head;
+	count = 0;
+	while (ptr)
+	{
+		buf[count] = ptr->n;
+		count++;
+		ptr = ptr->next;
+	}
+	half = count / 2;
+
+	while (half)
+	{
+		if (buf[count2] != buf[count - 1])
+			return (0);
+		half--;
+		count2++;
+		count--;
+	}
+	free(buf);
 	return (1);
-if (n % 2 != 0 || !head)
-	return (0);
-
-int array[n];
-listint_t *ptr = *head;
-for (int i = 0; i < n; i++)
-{
-array[i] = ptr->n;
-ptr = ptr->next;
-}
-
-int i = 0, j = n - 1;
-while (i < j)
-{
-if (array[i] != array[j])
-	return (0);
-i++;
-j--;
-}
-return (1);
 }
