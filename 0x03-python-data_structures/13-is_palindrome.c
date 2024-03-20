@@ -1,12 +1,10 @@
 #include "lists.h"
 #include <stdlib.h>
 #include <stdio.h>
-/*
- * is_palindrome - function with one argument
- * @head: pointer to linked list
- *
- * Description: check if value singly linked list is palindrome
- * Return: 1 if true or 0 if false
+/**
+ * is_palendrome - jhfgv
+ * @head: kjhukj
+ * Return: ljhlk
  */
 int is_palindrome(listint_t **head)
 {
@@ -15,7 +13,7 @@ int is_palindrome(listint_t **head)
 	int *buf = NULL;
 
 	if (!head)
-	      return (0);
+		return (0);
 	if (!*head)
 		return (1);
 	ptr = *head;
