@@ -1,5 +1,8 @@
 def square_matrix_simple(matrix=[]):
+    square_matrix = []
     for i in range(len(matrix)):
-        for j in range(len(matrix[i])):
-            matrix[i][j] = pow(matrix[i][j], 2)
-    return matrix
+        row = list(map(square, matrix[i]))
+        square_matrix.append(row)
+    return square_matrix
+def square(i):
+    return i**2
