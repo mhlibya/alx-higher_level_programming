@@ -1,12 +1,16 @@
 #!/usr/bin/python3
 """
-================================
-shuirfgehsirougheriugheisurghgur
-================================
+===========================
+Module with class MyList
+===========================
 """
+
+
 class MyList(list):
-    """askldjfsdkfhlf"""
+    """Class with method print_sorted"""
     pass
+
     def print_sorted(self):
-        """kutkuyfuyyugyig"""
+        """Methot that sorted a list"""
+
         print(sorted(list(self)))
