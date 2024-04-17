@@ -9,7 +9,7 @@ module with class Rectangle
 
 
 class Rectangle(BaseGeometry):
-    """Rectangle class that inherits from BaseGeometry"""
+    """Rectangle class that nherits from BaseGeometry"""
 
     def __init__(self, width, height):
         self.integer_validator("width", width)
