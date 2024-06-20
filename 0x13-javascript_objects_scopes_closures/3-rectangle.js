@@ -1,5 +1,5 @@
 #!/usr/bin/node
-
+// 3-rectangle
 class Rectangle {
 	constructor (w, h) {
 		if (w > 0 && h > 0) {
@@ -7,12 +7,11 @@ class Rectangle {
 			this.height = h;
 		}
 	}
-	print() {
+
+
+	print () {
 		for (let i = 0; i < this.height; i++) {
-			for (let j = 0; j < this.width; j++) {
-				process.stdout.write('x');
-			}
-			console.log();
+				console.log('x'.repeat(this.width));
 		}
 	}
 }
