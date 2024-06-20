@@ -1,18 +1,21 @@
 #!/usr/bin/node
-// 3-rectangle
 class Rectangle {
 	constructor (w, h) {
-		if (w > 0 && h > 0) {
+		if ((w > 0) && (h > 0)) {
 			this.width = w;
 			this.height = h;
 		}
 	}
 
-
 	print () {
 		for (let i = 0; i < this.height; i++) {
-				console.log('x'.repeat(this.width));
+			let s = '';
+			for (let j = 0; j < this.width; j++) {
+				s += 'X';
+			}
+			console.log(s);
 		}
 	}
 }
+
 module.exports = Rectangle;
