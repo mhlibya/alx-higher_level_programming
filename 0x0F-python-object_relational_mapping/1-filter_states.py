@@ -1,10 +1,10 @@
 #!/usr/bin/python3
 """state selector"""
 import sys
-import MYSQLdb
+import MySQLdb
 
 if __name__ == "__main__":
-	db = MYSQLdb.connect(
+	db = MySQLdb.connect(
 	host="localhost",
 	port=3306,
 	user=sys.argv[1],
@@ -13,7 +13,7 @@ if __name__ == "__main__":
 	)
 
 	cur = db.cursor()
-	cur.excute("SELECT * FROM states WHERE name LIKE BINARY 'N%' ORDER BY atates.id ASC")
+	cur.execute("""SELECT * FROM states WHERE name LIKE BINARY 'N%' ORDER BY states.id ASC""")
 	rows = cur.fetchall()
 	for row in rows:
 		print(row)
