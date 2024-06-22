@@ -23,5 +23,5 @@ def list_states(username, password, db_name):
 	cur.close()
 	db.close()
 
-if __name__ == __main__:
+if __name__ == "__main__":
 	list_states(sys.srgv[1], sys.argv[2], sys.argv[3])
